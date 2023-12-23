@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>icons/check_FILL0_wght400_GRAD0_opsz24.svg</file>
+    <file>icons/dataset_FILL0_wght400_GRAD0_opsz24.svg</file>
+    <file>icons/grade_FILL0_wght400_GRAD0_opsz24.svg</file>
+    <file>icons/radio_button_partial_FILL0_wght400_GRAD0_opsz24.svg</file>
+    <file>icons/restart_alt_FILL0_wght400_GRAD0_opsz24.svg</file>
+  </qresource>
+</RCC>
