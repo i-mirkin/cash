@@ -1,0 +1,37 @@
+pyside6-uic .\ui_main.ui -o ui_main.py
+pyside6-rcc .\resources.qrc -o resources.py
+
+
+query.exec("CREATE TABLE IF NOT EXISTS expenses (ID integer primary key AUTOINCREMENT, Date VARCHAR(20), "
+                   "Category VARCHAR(20), Description VARCHAR(20), Balance REAL, Status VARCHAR(20))")
+
+
+
+CREATE TABLE IF NOT EXISTS contractor  (
+contractor_id INTEGER PRIMARY KEY,
+contractor_name TEXT NOT NULL,
+contractor_description TEXT,
+contractor_active INTEGER DEFAULT 1,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)
+
+CREATE TABLE IF NOT EXISTS person  (
+person_id INTEGER PRIMARY KEY,
+person_name TEXT NOT NULL,
+person_description TEXT,
+person_active INTEGER DEFAULT 1,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)
+
+	1   cash_id Первичный	int(11)			Нет	Нет		AUTO_INCREMENT	Изменить Изменить	Удалить Удалить
+	2	cash_giver_id Индекс	int(11)			Да	NULL			Изменить Изменить	Удалить Удалить
+	3	cash_receiver_id Индекс	int(11)			Да	NULL			Изменить Изменить	Удалить Удалить
+	4	cash_date	date			Да	NULL			Изменить Изменить	Удалить Удалить
+	5	cash_sum	decimal(15,2)			Да	NULL			Изменить Изменить	Удалить Удалить
+	6	cash_status_id	int(11)			Да	NULL			Изменить Изменить	Удалить Удалить
+	7	cash_description	varchar(1000)	utf8_unicode_ci		Да	NULL			Изменить Изменить	Удалить Удалить
+	8	created_at	timestamp			Нет	CURRENT_TIMESTAMP			Изменить Изменить	Удалить Удалить
+	9	updated_at
+
