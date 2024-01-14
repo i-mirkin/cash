@@ -7,231 +7,575 @@
     <x>0</x>
     <y>0</y>
     <width>732</width>
-    <height>635</height>
+    <height>613</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Cash</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #eee;</string>
+   <string notr="true">background-color: #eee;
+
+QPushButton {
+    border-radius:  10px;
+    background-color:  rgb(37, 37, 37);
+    color:  rgb(255, 255, 255);
+    font-size:  33px;
+}
+
+QPushButton:pressed {
+    background-color:  rgb(118, 118, 118);
+}</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QFrame" name="frame">
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color:  red;
+    color:  red;
+}
+
+QPushButton:pressed {
+    background-color:  red;
+}
+
+QTabWidget {
+    color: red;
+	background-color: red;
+}
+QHeaderView {
+    color: blue;
+}
+
+QTabBar::tab{
+	color: black;
+	background: white;
+}
+QTabBar::tab:selected{
+	color: white;
+	background: gray;
+}
+
+QTableView{
+	color: blue;
+}
+</string>
+   </property>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>9</y>
+      <width>311</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>13</x>
+       <y>10</y>
+       <width>285</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Программа учета движения средств</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>713</width>
+      <height>381</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: black;</string>
+    </property>
+    <property name="tabPosition">
+     <enum>QTabWidget::North</enum>
+    </property>
+    <property name="tabShape">
+     <enum>QTabWidget::Triangular</enum>
+    </property>
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
+    <widget class="QWidget" name="tab_start">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <attribute name="title">
+      <string>Итоги</string>
+     </attribute>
+     <widget class="QTextEdit" name="textEdit">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>690</width>
+        <height>260</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_persons">
+     <attribute name="title">
+      <string>Физ. лица</string>
+     </attribute>
+     <widget class="QTableView" name="tablePerson">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>690</width>
+        <height>260</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;</string>
+      </property>
+     </widget>
+     <widget class="QFrame" name="frame_add_person">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>290</y>
+        <width>691</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;</string>
+      </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_3">
-       <item>
-        <widget class="QLabel" name="label">
-         <property name="text">
-          <string>Программа учета движения средств</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
+      <widget class="QTextEdit" name="textEditPersonId">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>8</x>
+         <y>10</y>
+         <width>81</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>person_id</string>
+       </property>
+      </widget>
+      <widget class="QTextEdit" name="textEditPersonName">
+       <property name="geometry">
+        <rect>
+         <x>95</x>
+         <y>10</y>
+         <width>100</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>person_name</string>
+       </property>
+      </widget>
+      <widget class="QTextEdit" name="textEditPersonDescription">
+       <property name="geometry">
+        <rect>
+         <x>201</x>
+         <y>10</y>
+         <width>100</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-bottom: 1px solid #888;</string>
+       </property>
+       <property name="placeholderText">
+        <string>person_description</string>
+       </property>
+      </widget>
+      <widget class="QTextEdit" name="textEditPersonActive">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>306</x>
+         <y>10</y>
+         <width>100</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>person_active</string>
+       </property>
+      </widget>
+      <widget class="QTextEdit" name="textEditPersonCreatedAt">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>412</x>
+         <y>10</y>
+         <width>100</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>created_at</string>
+       </property>
+      </widget>
+      <widget class="QTextEdit" name="textEditPersonUpdatedAt">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>517</x>
+         <y>10</y>
+         <width>100</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>updated_at</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButtonPerson">
+       <property name="geometry">
+        <rect>
+         <x>630</x>
+         <y>10</y>
+         <width>51</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>OK</string>
+       </property>
+      </widget>
      </widget>
-    </item>
-    <item>
-     <widget class="QTabWidget" name="tabWidget">
-      <property name="currentIndex">
-       <number>1</number>
+    </widget>
+    <widget class="QWidget" name="tab_contractors">
+     <attribute name="title">
+      <string>Юр. лица</string>
+     </attribute>
+     <widget class="QTableView" name="tableContractor">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>690</width>
+        <height>260</height>
+       </rect>
       </property>
-      <widget class="QWidget" name="tab_start">
-       <attribute name="title">
-        <string>Итоги</string>
-       </attribute>
-       <widget class="QTextEdit" name="textEdit">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>30</y>
-          <width>641</width>
-          <height>141</height>
-         </rect>
-        </property>
-       </widget>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;</string>
+      </property>
+     </widget>
+     <widget class="QFrame" name="frame_add_contractor">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>290</y>
+        <width>691</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QTextEdit" name="textEditContractorId">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>8</x>
+         <y>10</y>
+         <width>81</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>contractor_id</string>
+       </property>
       </widget>
-      <widget class="QWidget" name="tab_persons">
-       <attribute name="title">
-        <string>Физ. лица</string>
-       </attribute>
-       <widget class="QTableView" name="tableView">
-        <property name="geometry">
-         <rect>
-          <x>9</x>
-          <y>9</y>
-          <width>691</width>
-          <height>411</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: white;</string>
-        </property>
-       </widget>
-       <widget class="QFrame" name="frame_add">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>440</y>
-          <width>691</width>
-          <height>51</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: white;</string>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <widget class="QTextEdit" name="textEdit_person_id">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>10</y>
-           <width>81</width>
-           <height>32</height>
-          </rect>
-         </property>
-         <property name="placeholderText">
-          <string>person_id</string>
-         </property>
-        </widget>
-        <widget class="QTextEdit" name="textEdit_person_name">
-         <property name="geometry">
-          <rect>
-           <x>100</x>
-           <y>10</y>
-           <width>100</width>
-           <height>32</height>
-          </rect>
-         </property>
-         <property name="placeholderText">
-          <string>person_name</string>
-         </property>
-        </widget>
-        <widget class="QTextEdit" name="textEdit_person_description">
-         <property name="geometry">
-          <rect>
-           <x>210</x>
-           <y>10</y>
-           <width>100</width>
-           <height>32</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">border-bottom: 1px solid #888;</string>
-         </property>
-         <property name="placeholderText">
-          <string>person_description</string>
-         </property>
-        </widget>
-        <widget class="QTextEdit" name="textEdit_person_active">
-         <property name="geometry">
-          <rect>
-           <x>320</x>
-           <y>10</y>
-           <width>100</width>
-           <height>32</height>
-          </rect>
-         </property>
-         <property name="placeholderText">
-          <string>person_active</string>
-         </property>
-        </widget>
-        <widget class="QTextEdit" name="textEdit_person_created_at">
-         <property name="geometry">
-          <rect>
-           <x>430</x>
-           <y>10</y>
-           <width>100</width>
-           <height>32</height>
-          </rect>
-         </property>
-         <property name="placeholderText">
-          <string>created_at</string>
-         </property>
-        </widget>
-        <widget class="QTextEdit" name="textEdit_person_updated_at">
-         <property name="geometry">
-          <rect>
-           <x>540</x>
-           <y>10</y>
-           <width>100</width>
-           <height>32</height>
-          </rect>
-         </property>
-         <property name="placeholderText">
-          <string>updated_at</string>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="pushButton">
-         <property name="geometry">
-          <rect>
-           <x>640</x>
-           <y>10</y>
-           <width>41</width>
-           <height>24</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>OK</string>
-         </property>
-        </widget>
-       </widget>
+      <widget class="QTextEdit" name="textEditContractorName">
+       <property name="geometry">
+        <rect>
+         <x>95</x>
+         <y>10</y>
+         <width>100</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>contractor_name</string>
+       </property>
       </widget>
-      <widget class="QWidget" name="tab_contractors">
-       <attribute name="title">
-        <string>Юр. лица</string>
-       </attribute>
-       <widget class="QTableView" name="tableView_2">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>10</y>
-          <width>660</width>
-          <height>521</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: white;</string>
-        </property>
-       </widget>
+      <widget class="QTextEdit" name="textEditContractorDescription">
+       <property name="geometry">
+        <rect>
+         <x>201</x>
+         <y>10</y>
+         <width>100</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-bottom: 1px solid #888;</string>
+       </property>
+       <property name="placeholderText">
+        <string>contractor_description</string>
+       </property>
       </widget>
-      <widget class="QWidget" name="tab_cash">
-       <attribute name="title">
-        <string>Поступления</string>
-       </attribute>
-       <widget class="QTableView" name="tableView_3">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>10</y>
-          <width>660</width>
-          <height>391</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: white;</string>
-        </property>
-       </widget>
+      <widget class="QTextEdit" name="textEditContractorActive">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>306</x>
+         <y>10</y>
+         <width>100</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>contractor_active</string>
+       </property>
       </widget>
-      <widget class="QWidget" name="tab_swap">
-       <attribute name="title">
-        <string>Сделки</string>
-       </attribute>
+      <widget class="QTextEdit" name="textEditContractorCreatedAt">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>412</x>
+         <y>10</y>
+         <width>100</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>created_at</string>
+       </property>
+      </widget>
+      <widget class="QTextEdit" name="textEditContractorUpdatedAt">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>517</x>
+         <y>10</y>
+         <width>100</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>updated_at</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButtonContractor">
+       <property name="geometry">
+        <rect>
+         <x>630</x>
+         <y>10</y>
+         <width>51</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>OK</string>
+       </property>
       </widget>
      </widget>
-    </item>
-   </layout>
+    </widget>
+    <widget class="QWidget" name="tab_cash">
+     <attribute name="title">
+      <string>Поступления</string>
+     </attribute>
+     <widget class="QTableView" name="tableCash">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>690</width>
+        <height>260</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;</string>
+      </property>
+     </widget>
+     <widget class="QFrame" name="frame_add_contractor_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>280</y>
+        <width>691</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QTextEdit" name="textEditCashDate">
+       <property name="geometry">
+        <rect>
+         <x>201</x>
+         <y>10</y>
+         <width>100</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-bottom: 1px solid #888;</string>
+       </property>
+       <property name="placeholderText">
+        <string>cash_date</string>
+       </property>
+      </widget>
+      <widget class="QTextEdit" name="textEditCashSum">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>306</x>
+         <y>10</y>
+         <width>100</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>cash_sum</string>
+       </property>
+      </widget>
+      <widget class="QTextEdit" name="textEditCashDescription">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>412</x>
+         <y>10</y>
+         <width>100</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>cash_description</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButtonCash">
+       <property name="geometry">
+        <rect>
+         <x>630</x>
+         <y>10</y>
+         <width>51</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>OK</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboBoxCashGiver">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>90</width>
+         <height>32</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboBoxCashReceiver">
+       <property name="geometry">
+        <rect>
+         <x>106</x>
+         <y>10</y>
+         <width>90</width>
+         <height>32</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_swap">
+     <attribute name="title">
+      <string>Сделки</string>
+     </attribute>
+     <widget class="QTableView" name="tableSwap">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>690</width>
+        <height>260</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QTextBrowser" name="textBrowser">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>450</y>
+      <width>711</width>
+      <height>151</height>
+     </rect>
+    </property>
+   </widget>
+   <zorder>frame</zorder>
+   <zorder>textBrowser</zorder>
+   <zorder>tabWidget</zorder>
   </widget>
  </widget>
  <resources>

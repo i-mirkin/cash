@@ -82,9 +82,25 @@ class Data:
 
         return query
 
-    def add_new_transaction_query(self, date, category, description, balance, status):
-        sql_query = "INSERT INTO expenses (Date, Category, Description, Balance, Status) VALUES (?, ?, ?, ?, ?)"
-        self.execute_query_with_params(sql_query, [date, category, description, balance, status])
+
+    def add_new_person_query(self, person_name, person_description):
+        sql_query = "INSERT INTO person (person_name, person_description) VALUES (?, ?)"
+        self.execute_query_with_params(sql_query, [person_name, person_description])
+
+
+    def add_new_contractor_query(self, contractor_name, contractor_description):
+        sql_query = "INSERT INTO contractor (contractor_name, contractor_description) VALUES (?, ?)"
+        self.execute_query_with_params(sql_query, [contractor_name, contractor_description])
+
+    def add_new_cash_query(self, cash_giver_id, cash_receiver_id, cash_date, cash_sum, cash_description):
+        sql_query = "INSERT INTO cash (cash_giver_id, cash_receiver_id, cash_date, cash_sum, cash_description) VALUES (?, ?, ?, ?, ?)"
+        self.execute_query_with_params(sql_query, [cash_giver_id, cash_receiver_id, cash_date, cash_sum, cash_description])
+
+
+
+
+
+
 
     def update_transaction_query(self, date, category, description, balance, status, id):
         sql_query = "UPDATE expenses SET Date=?, Category=?, Description=?, Balance=?, Status=? WHERE ID=?"

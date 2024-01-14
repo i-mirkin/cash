@@ -1,5 +1,14 @@
+pip install pyside6
+
+C:\Python311\Lib\site-packages\PySide6\designer.exe
+
 pyside6-uic .\ui_main.ui -o ui_main.py
 pyside6-rcc .\resources.qrc -o resources.py
+
+если pyside6-uic : Имя "pyside6-uic" не распознано как имя командлета
+uic.exe поместить в C:\Python311\Lib\site-packages\PySide6\bin (bin создать)
+из QT Designer Форма - Показать код Python + не забудь в  import resources_rc убрать _rc
+
 
 
 query.exec("CREATE TABLE IF NOT EXISTS expenses (ID integer primary key AUTOINCREMENT, Date VARCHAR(20), "

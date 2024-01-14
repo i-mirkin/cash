@@ -15,271 +15,247 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QHeaderView,
+from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QHeaderView,
     QLabel, QMainWindow, QPushButton, QSizePolicy,
-    QTableView, QVBoxLayout, QWidget)
+    QTabWidget, QTableView, QTextBrowser, QTextEdit,
+    QWidget)
 import resources
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(702, 600)
-        MainWindow.setStyleSheet(u"background-color: gray;")
+        MainWindow.resize(732, 613)
+        MainWindow.setStyleSheet(u"background-color: #eee;\n"
+"\n"
+"QPushButton {\n"
+"    border-radius:  10px;\n"
+"    background-color:  rgb(37, 37, 37);\n"
+"    color:  rgb(255, 255, 255);\n"
+"    font-size:  33px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color:  rgb(118, 118, 118);\n"
+"}")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.verticalLayout_3 = QVBoxLayout(self.centralwidget)
-        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.centralwidget.setStyleSheet(u"QPushButton {\n"
+"    background-color:  red;\n"
+"    color:  red;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color:  red;\n"
+"}\n"
+"\n"
+"QTabWidget {\n"
+"    color: red;\n"
+"	background-color: red;\n"
+"}\n"
+"QHeaderView {\n"
+"    color: blue;\n"
+"}\n"
+"\n"
+"QTabBar::tab{\n"
+"	color: black;\n"
+"	background: white;\n"
+"}\n"
+"QTabBar::tab:selected{\n"
+"	color: white;\n"
+"	background: gray;\n"
+"}\n"
+"\n"
+"QTableView{\n"
+"	color: blue;\n"
+"}\n"
+"")
         self.frame = QFrame(self.centralwidget)
         self.frame.setObjectName(u"frame")
-        self.horizontalLayout_7 = QHBoxLayout(self.frame)
-        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
-        self.left = QFrame(self.frame)
-        self.left.setObjectName(u"left")
-        self.left.setStyleSheet(u"background-color: rgba(255, 255, 255, 0.5);")
-        self.verticalLayout = QVBoxLayout(self.left)
-        self.verticalLayout.setObjectName(u"verticalLayout")
-        self.label = QLabel(self.left)
+        self.frame.setGeometry(QRect(9, 9, 311, 36))
+        self.frame.setFrameShape(QFrame.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Raised)
+        self.label = QLabel(self.frame)
         self.label.setObjectName(u"label")
-        self.label.setStyleSheet(u"background-color: white;\n"
-"padding: 5px 10px;\n"
-"text-align: center;")
-
-        self.verticalLayout.addWidget(self.label)
-
-        self.label_2 = QLabel(self.left)
-        self.label_2.setObjectName(u"label_2")
-        self.label_2.setStyleSheet(u"background-color: white;\n"
-"padding: 5px 10px;\n"
-"text-align: center;")
-
-        self.verticalLayout.addWidget(self.label_2)
-
-        self.horizontalLayout = QHBoxLayout()
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.label_3 = QLabel(self.left)
-        self.label_3.setObjectName(u"label_3")
-        self.label_3.setStyleSheet(u"background-color: white;\n"
-"padding: 5px 10px;\n"
-"text-align: center;")
-        self.label_3.setPixmap(QPixmap(u":/icons/icons/grade_FILL0_wght400_GRAD0_opsz24.svg"))
-
-        self.horizontalLayout.addWidget(self.label_3)
-
-        self.label_5 = QLabel(self.left)
-        self.label_5.setObjectName(u"label_5")
-        self.label_5.setStyleSheet(u"background-color: white;\n"
-"padding: 5px 10px;\n"
-"text-align: center;")
-
-        self.horizontalLayout.addWidget(self.label_5)
-
-
-        self.verticalLayout.addLayout(self.horizontalLayout)
-
-        self.label_4 = QLabel(self.left)
-        self.label_4.setObjectName(u"label_4")
-        self.label_4.setStyleSheet(u"background-color: white;\n"
-"padding: 5px 10px;\n"
-"text-align: center;")
-
-        self.verticalLayout.addWidget(self.label_4)
-
-        self.horizontalLayout_2 = QHBoxLayout()
-        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.label_7 = QLabel(self.left)
-        self.label_7.setObjectName(u"label_7")
-        self.label_7.setStyleSheet(u"background-color: white;\n"
-"padding: 5px 10px;\n"
-"text-align: center;")
-
-        self.horizontalLayout_2.addWidget(self.label_7)
-
-        self.label_6 = QLabel(self.left)
-        self.label_6.setObjectName(u"label_6")
-        self.label_6.setStyleSheet(u"background-color: white;\n"
-"padding: 5px 10px;\n"
-"text-align: center;")
-
-        self.horizontalLayout_2.addWidget(self.label_6)
-
-
-        self.verticalLayout.addLayout(self.horizontalLayout_2)
-
-        self.label_8 = QLabel(self.left)
-        self.label_8.setObjectName(u"label_8")
-        self.label_8.setStyleSheet(u"background-color: white;\n"
-"padding: 5px 10px;\n"
-"text-align: center;")
-
-        self.verticalLayout.addWidget(self.label_8)
-
-
-        self.horizontalLayout_7.addWidget(self.left)
-
-        self.right = QFrame(self.frame)
-        self.right.setObjectName(u"right")
-        self.right.setStyleSheet(u"background-color: red;")
-        self.verticalLayout_2 = QVBoxLayout(self.right)
-        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.label_9 = QLabel(self.right)
-        self.label_9.setObjectName(u"label_9")
-
-        self.verticalLayout_2.addWidget(self.label_9)
-
-        self.horizontalLayout_3 = QHBoxLayout()
-        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
-        self.label_10 = QLabel(self.right)
-        self.label_10.setObjectName(u"label_10")
-
-        self.horizontalLayout_3.addWidget(self.label_10)
-
-        self.label_11 = QLabel(self.right)
-        self.label_11.setObjectName(u"label_11")
-
-        self.horizontalLayout_3.addWidget(self.label_11)
-
-        self.label_12 = QLabel(self.right)
-        self.label_12.setObjectName(u"label_12")
-
-        self.horizontalLayout_3.addWidget(self.label_12)
-
-
-        self.verticalLayout_2.addLayout(self.horizontalLayout_3)
-
-        self.horizontalLayout_4 = QHBoxLayout()
-        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.label_13 = QLabel(self.right)
-        self.label_13.setObjectName(u"label_13")
-
-        self.horizontalLayout_4.addWidget(self.label_13)
-
-        self.label_14 = QLabel(self.right)
-        self.label_14.setObjectName(u"label_14")
-
-        self.horizontalLayout_4.addWidget(self.label_14)
-
-        self.label_15 = QLabel(self.right)
-        self.label_15.setObjectName(u"label_15")
-
-        self.horizontalLayout_4.addWidget(self.label_15)
-
-
-        self.verticalLayout_2.addLayout(self.horizontalLayout_4)
-
-        self.horizontalLayout_5 = QHBoxLayout()
-        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
-        self.label_16 = QLabel(self.right)
-        self.label_16.setObjectName(u"label_16")
-
-        self.horizontalLayout_5.addWidget(self.label_16)
-
-        self.label_17 = QLabel(self.right)
-        self.label_17.setObjectName(u"label_17")
-
-        self.horizontalLayout_5.addWidget(self.label_17)
-
-        self.label_18 = QLabel(self.right)
-        self.label_18.setObjectName(u"label_18")
-
-        self.horizontalLayout_5.addWidget(self.label_18)
-
-
-        self.verticalLayout_2.addLayout(self.horizontalLayout_5)
-
-        self.horizontalLayout_6 = QHBoxLayout()
-        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.label_19 = QLabel(self.right)
-        self.label_19.setObjectName(u"label_19")
-
-        self.horizontalLayout_6.addWidget(self.label_19)
-
-        self.label_20 = QLabel(self.right)
-        self.label_20.setObjectName(u"label_20")
-
-        self.horizontalLayout_6.addWidget(self.label_20)
-
-        self.label_21 = QLabel(self.right)
-        self.label_21.setObjectName(u"label_21")
-
-        self.horizontalLayout_6.addWidget(self.label_21)
-
-
-        self.verticalLayout_2.addLayout(self.horizontalLayout_6)
-
-
-        self.horizontalLayout_7.addWidget(self.right)
-
-
-        self.verticalLayout_3.addWidget(self.frame)
-
-        self.horizontalLayout_8 = QHBoxLayout()
-        self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
-        self.pushButton = QPushButton(self.centralwidget)
-        self.pushButton.setObjectName(u"pushButton")
-        icon = QIcon()
-        icon.addFile(u":/icons/icons/check_FILL0_wght400_GRAD0_opsz24.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton.setIcon(icon)
-
-        self.horizontalLayout_8.addWidget(self.pushButton)
-
-        self.pushButton_2 = QPushButton(self.centralwidget)
-        self.pushButton_2.setObjectName(u"pushButton_2")
-        icon1 = QIcon()
-        icon1.addFile(u":/icons/icons/radio_button_partial_FILL0_wght400_GRAD0_opsz24.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton_2.setIcon(icon1)
-
-        self.horizontalLayout_8.addWidget(self.pushButton_2)
-
-        self.pushButton_3 = QPushButton(self.centralwidget)
-        self.pushButton_3.setObjectName(u"pushButton_3")
-        icon2 = QIcon()
-        icon2.addFile(u":/icons/icons/restart_alt_FILL0_wght400_GRAD0_opsz24.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton_3.setIcon(icon2)
-
-        self.horizontalLayout_8.addWidget(self.pushButton_3)
-
-
-        self.verticalLayout_3.addLayout(self.horizontalLayout_8)
-
-        self.tableView = QTableView(self.centralwidget)
-        self.tableView.setObjectName(u"tableView")
-        self.tableView.setStyleSheet(u"background-color: white;")
-
-        self.verticalLayout_3.addWidget(self.tableView)
-
+        self.label.setGeometry(QRect(13, 10, 285, 16))
+        self.tabWidget = QTabWidget(self.centralwidget)
+        self.tabWidget.setObjectName(u"tabWidget")
+        self.tabWidget.setGeometry(QRect(10, 50, 713, 381))
+        font = QFont()
+        font.setBold(False)
+        self.tabWidget.setFont(font)
+        self.tabWidget.setAutoFillBackground(False)
+        self.tabWidget.setStyleSheet(u"color: black;")
+        self.tabWidget.setTabPosition(QTabWidget.North)
+        self.tabWidget.setTabShape(QTabWidget.Triangular)
+        self.tab_start = QWidget()
+        self.tab_start.setObjectName(u"tab_start")
+        self.tab_start.setStyleSheet(u"")
+        self.textEdit = QTextEdit(self.tab_start)
+        self.textEdit.setObjectName(u"textEdit")
+        self.textEdit.setGeometry(QRect(10, 10, 690, 260))
+        self.tabWidget.addTab(self.tab_start, "")
+        self.tab_persons = QWidget()
+        self.tab_persons.setObjectName(u"tab_persons")
+        self.tablePerson = QTableView(self.tab_persons)
+        self.tablePerson.setObjectName(u"tablePerson")
+        self.tablePerson.setGeometry(QRect(10, 10, 690, 260))
+        self.tablePerson.setAutoFillBackground(True)
+        self.tablePerson.setStyleSheet(u"background-color: white;")
+        self.frame_add_person = QFrame(self.tab_persons)
+        self.frame_add_person.setObjectName(u"frame_add_person")
+        self.frame_add_person.setGeometry(QRect(10, 290, 691, 51))
+        self.frame_add_person.setStyleSheet(u"background-color: white;")
+        self.frame_add_person.setFrameShape(QFrame.StyledPanel)
+        self.frame_add_person.setFrameShadow(QFrame.Raised)
+        self.textEditPersonId = QTextEdit(self.frame_add_person)
+        self.textEditPersonId.setObjectName(u"textEditPersonId")
+        self.textEditPersonId.setEnabled(False)
+        self.textEditPersonId.setGeometry(QRect(8, 10, 81, 32))
+        self.textEditPersonName = QTextEdit(self.frame_add_person)
+        self.textEditPersonName.setObjectName(u"textEditPersonName")
+        self.textEditPersonName.setGeometry(QRect(95, 10, 100, 32))
+        self.textEditPersonDescription = QTextEdit(self.frame_add_person)
+        self.textEditPersonDescription.setObjectName(u"textEditPersonDescription")
+        self.textEditPersonDescription.setGeometry(QRect(201, 10, 100, 32))
+        self.textEditPersonDescription.setStyleSheet(u"border-bottom: 1px solid #888;")
+        self.textEditPersonActive = QTextEdit(self.frame_add_person)
+        self.textEditPersonActive.setObjectName(u"textEditPersonActive")
+        self.textEditPersonActive.setEnabled(False)
+        self.textEditPersonActive.setGeometry(QRect(306, 10, 100, 32))
+        self.textEditPersonCreatedAt = QTextEdit(self.frame_add_person)
+        self.textEditPersonCreatedAt.setObjectName(u"textEditPersonCreatedAt")
+        self.textEditPersonCreatedAt.setEnabled(False)
+        self.textEditPersonCreatedAt.setGeometry(QRect(412, 10, 100, 32))
+        self.textEditPersonUpdatedAt = QTextEdit(self.frame_add_person)
+        self.textEditPersonUpdatedAt.setObjectName(u"textEditPersonUpdatedAt")
+        self.textEditPersonUpdatedAt.setEnabled(False)
+        self.textEditPersonUpdatedAt.setGeometry(QRect(517, 10, 100, 32))
+        self.pushButtonPerson = QPushButton(self.frame_add_person)
+        self.pushButtonPerson.setObjectName(u"pushButtonPerson")
+        self.pushButtonPerson.setGeometry(QRect(630, 10, 51, 32))
+        self.tabWidget.addTab(self.tab_persons, "")
+        self.tab_contractors = QWidget()
+        self.tab_contractors.setObjectName(u"tab_contractors")
+        self.tableContractor = QTableView(self.tab_contractors)
+        self.tableContractor.setObjectName(u"tableContractor")
+        self.tableContractor.setGeometry(QRect(10, 10, 690, 260))
+        self.tableContractor.setStyleSheet(u"background-color: white;")
+        self.frame_add_contractor = QFrame(self.tab_contractors)
+        self.frame_add_contractor.setObjectName(u"frame_add_contractor")
+        self.frame_add_contractor.setGeometry(QRect(10, 290, 691, 51))
+        self.frame_add_contractor.setStyleSheet(u"background-color: white;")
+        self.frame_add_contractor.setFrameShape(QFrame.StyledPanel)
+        self.frame_add_contractor.setFrameShadow(QFrame.Raised)
+        self.textEditContractorId = QTextEdit(self.frame_add_contractor)
+        self.textEditContractorId.setObjectName(u"textEditContractorId")
+        self.textEditContractorId.setEnabled(False)
+        self.textEditContractorId.setGeometry(QRect(8, 10, 81, 32))
+        self.textEditContractorName = QTextEdit(self.frame_add_contractor)
+        self.textEditContractorName.setObjectName(u"textEditContractorName")
+        self.textEditContractorName.setGeometry(QRect(95, 10, 100, 32))
+        self.textEditContractorDescription = QTextEdit(self.frame_add_contractor)
+        self.textEditContractorDescription.setObjectName(u"textEditContractorDescription")
+        self.textEditContractorDescription.setGeometry(QRect(201, 10, 100, 32))
+        self.textEditContractorDescription.setStyleSheet(u"border-bottom: 1px solid #888;")
+        self.textEditContractorActive = QTextEdit(self.frame_add_contractor)
+        self.textEditContractorActive.setObjectName(u"textEditContractorActive")
+        self.textEditContractorActive.setEnabled(False)
+        self.textEditContractorActive.setGeometry(QRect(306, 10, 100, 32))
+        self.textEditContractorCreatedAt = QTextEdit(self.frame_add_contractor)
+        self.textEditContractorCreatedAt.setObjectName(u"textEditContractorCreatedAt")
+        self.textEditContractorCreatedAt.setEnabled(False)
+        self.textEditContractorCreatedAt.setGeometry(QRect(412, 10, 100, 32))
+        self.textEditContractorUpdatedAt = QTextEdit(self.frame_add_contractor)
+        self.textEditContractorUpdatedAt.setObjectName(u"textEditContractorUpdatedAt")
+        self.textEditContractorUpdatedAt.setEnabled(False)
+        self.textEditContractorUpdatedAt.setGeometry(QRect(517, 10, 100, 32))
+        self.pushButtonContractor = QPushButton(self.frame_add_contractor)
+        self.pushButtonContractor.setObjectName(u"pushButtonContractor")
+        self.pushButtonContractor.setGeometry(QRect(630, 10, 51, 32))
+        self.tabWidget.addTab(self.tab_contractors, "")
+        self.tab_cash = QWidget()
+        self.tab_cash.setObjectName(u"tab_cash")
+        self.tableCash = QTableView(self.tab_cash)
+        self.tableCash.setObjectName(u"tableCash")
+        self.tableCash.setGeometry(QRect(10, 10, 690, 260))
+        self.tableCash.setStyleSheet(u"background-color: white;")
+        self.frame_add_contractor_2 = QFrame(self.tab_cash)
+        self.frame_add_contractor_2.setObjectName(u"frame_add_contractor_2")
+        self.frame_add_contractor_2.setGeometry(QRect(10, 280, 691, 51))
+        self.frame_add_contractor_2.setStyleSheet(u"background-color: white;")
+        self.frame_add_contractor_2.setFrameShape(QFrame.StyledPanel)
+        self.frame_add_contractor_2.setFrameShadow(QFrame.Raised)
+        self.textEditCashDate = QTextEdit(self.frame_add_contractor_2)
+        self.textEditCashDate.setObjectName(u"textEditCashDate")
+        self.textEditCashDate.setGeometry(QRect(201, 10, 100, 32))
+        self.textEditCashDate.setStyleSheet(u"border-bottom: 1px solid #888;")
+        self.textEditCashSum = QTextEdit(self.frame_add_contractor_2)
+        self.textEditCashSum.setObjectName(u"textEditCashSum")
+        self.textEditCashSum.setEnabled(False)
+        self.textEditCashSum.setGeometry(QRect(306, 10, 100, 32))
+        self.textEditCashDescription = QTextEdit(self.frame_add_contractor_2)
+        self.textEditCashDescription.setObjectName(u"textEditCashDescription")
+        self.textEditCashDescription.setEnabled(False)
+        self.textEditCashDescription.setGeometry(QRect(412, 10, 100, 32))
+        self.pushButtonCash = QPushButton(self.frame_add_contractor_2)
+        self.pushButtonCash.setObjectName(u"pushButtonCash")
+        self.pushButtonCash.setGeometry(QRect(630, 10, 51, 32))
+        self.comboBoxCashGiver = QComboBox(self.frame_add_contractor_2)
+        self.comboBoxCashGiver.setObjectName(u"comboBoxCashGiver")
+        self.comboBoxCashGiver.setGeometry(QRect(10, 10, 90, 32))
+        self.comboBoxCashReceiver = QComboBox(self.frame_add_contractor_2)
+        self.comboBoxCashReceiver.setObjectName(u"comboBoxCashReceiver")
+        self.comboBoxCashReceiver.setGeometry(QRect(106, 10, 90, 32))
+        self.tabWidget.addTab(self.tab_cash, "")
+        self.tab_swap = QWidget()
+        self.tab_swap.setObjectName(u"tab_swap")
+        self.tableSwap = QTableView(self.tab_swap)
+        self.tableSwap.setObjectName(u"tableSwap")
+        self.tableSwap.setGeometry(QRect(10, 10, 690, 260))
+        self.tableSwap.setStyleSheet(u"background-color: white;")
+        self.tabWidget.addTab(self.tab_swap, "")
+        self.textBrowser = QTextBrowser(self.centralwidget)
+        self.textBrowser.setObjectName(u"textBrowser")
+        self.textBrowser.setGeometry(QRect(10, 450, 711, 151))
         MainWindow.setCentralWidget(self.centralwidget)
+        self.frame.raise_()
+        self.textBrowser.raise_()
+        self.tabWidget.raise_()
 
         self.retranslateUi(MainWindow)
+
+        self.tabWidget.setCurrentIndex(1)
+
 
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Cash", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"Current Balance", None))
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"1200 \u0440\u0443\u0431.", None))
-        self.label_3.setText("")
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"\u043f\u0440\u0438\u0445\u043e\u0434", None))
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"12 000 \u0440\u0443\u0431.", None))
-        self.label_7.setText("")
-        self.label_6.setText(QCoreApplication.translate("MainWindow", u"\u0440\u0430\u0441\u0445\u043e\u0434", None))
-        self.label_8.setText(QCoreApplication.translate("MainWindow", u"12 000 \u0440\u0443\u0431.", None))
-        self.label_9.setText(QCoreApplication.translate("MainWindow", u"\u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u0438", None))
-        self.label_10.setText(QCoreApplication.translate("MainWindow", u"icon", None))
-        self.label_11.setText(QCoreApplication.translate("MainWindow", u"\u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f 1", None))
-        self.label_12.setText(QCoreApplication.translate("MainWindow", u"20 000 \u0440\u0443\u0431.", None))
-        self.label_13.setText(QCoreApplication.translate("MainWindow", u"icon", None))
-        self.label_14.setText(QCoreApplication.translate("MainWindow", u"\u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f 2", None))
-        self.label_15.setText(QCoreApplication.translate("MainWindow", u"20 000 \u0440\u0443\u0431.", None))
-        self.label_16.setText(QCoreApplication.translate("MainWindow", u"icon", None))
-        self.label_17.setText(QCoreApplication.translate("MainWindow", u"\u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f 3", None))
-        self.label_18.setText(QCoreApplication.translate("MainWindow", u"20 000 \u0440\u0443\u0431.", None))
-        self.label_19.setText(QCoreApplication.translate("MainWindow", u"icon", None))
-        self.label_20.setText(QCoreApplication.translate("MainWindow", u"\u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f 4", None))
-        self.label_21.setText(QCoreApplication.translate("MainWindow", u"20 000 \u0440\u0443\u0431.", None))
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c", None))
-        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"\u0418\u0437\u043c\u0435\u043d\u0438\u0442\u044c", None))
-        self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"\u0423\u0434\u0430\u043b\u0438\u0442\u044c", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0430 \u0443\u0447\u0435\u0442\u0430 \u0434\u0432\u0438\u0436\u0435\u043d\u0438\u044f \u0441\u0440\u0435\u0434\u0441\u0442\u0432", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_start), QCoreApplication.translate("MainWindow", u"\u0418\u0442\u043e\u0433\u0438", None))
+        self.textEditPersonId.setPlaceholderText(QCoreApplication.translate("MainWindow", u"person_id", None))
+        self.textEditPersonName.setPlaceholderText(QCoreApplication.translate("MainWindow", u"person_name", None))
+        self.textEditPersonDescription.setPlaceholderText(QCoreApplication.translate("MainWindow", u"person_description", None))
+        self.textEditPersonActive.setPlaceholderText(QCoreApplication.translate("MainWindow", u"person_active", None))
+        self.textEditPersonCreatedAt.setPlaceholderText(QCoreApplication.translate("MainWindow", u"created_at", None))
+        self.textEditPersonUpdatedAt.setPlaceholderText(QCoreApplication.translate("MainWindow", u"updated_at", None))
+        self.pushButtonPerson.setText(QCoreApplication.translate("MainWindow", u"OK", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_persons), QCoreApplication.translate("MainWindow", u"\u0424\u0438\u0437. \u043b\u0438\u0446\u0430", None))
+        self.textEditContractorId.setPlaceholderText(QCoreApplication.translate("MainWindow", u"contractor_id", None))
+        self.textEditContractorName.setPlaceholderText(QCoreApplication.translate("MainWindow", u"contractor_name", None))
+        self.textEditContractorDescription.setPlaceholderText(QCoreApplication.translate("MainWindow", u"contractor_description", None))
+        self.textEditContractorActive.setPlaceholderText(QCoreApplication.translate("MainWindow", u"contractor_active", None))
+        self.textEditContractorCreatedAt.setPlaceholderText(QCoreApplication.translate("MainWindow", u"created_at", None))
+        self.textEditContractorUpdatedAt.setPlaceholderText(QCoreApplication.translate("MainWindow", u"updated_at", None))
+        self.pushButtonContractor.setText(QCoreApplication.translate("MainWindow", u"OK", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_contractors), QCoreApplication.translate("MainWindow", u"\u042e\u0440. \u043b\u0438\u0446\u0430", None))
+        self.textEditCashDate.setPlaceholderText(QCoreApplication.translate("MainWindow", u"cash_date", None))
+        self.textEditCashSum.setPlaceholderText(QCoreApplication.translate("MainWindow", u"cash_sum", None))
+        self.textEditCashDescription.setPlaceholderText(QCoreApplication.translate("MainWindow", u"cash_description", None))
+        self.pushButtonCash.setText(QCoreApplication.translate("MainWindow", u"OK", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_cash), QCoreApplication.translate("MainWindow", u"\u041f\u043e\u0441\u0442\u0443\u043f\u043b\u0435\u043d\u0438\u044f", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_swap), QCoreApplication.translate("MainWindow", u"\u0421\u0434\u0435\u043b\u043a\u0438", None))
     # retranslateUi
 
